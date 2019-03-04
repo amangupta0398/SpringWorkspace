@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+	<bean class="com.psl.bean.Employee" id="emp" autowire="byType"
+		scope="singleton" lazy-init="true" init-method="myMethodABC" destroy-method="myMethodXYZ">
+		<!-- <bean class="com.psl.bean.Employee" id="emp" autowire="byName"> -->
+		<!--<bean class="com.psl.bean.Employee" id="emp" autowire="constructor"> -->
+
+		<!-- <constructor-arg name= "employeeId" value="007"/> <constructor-arg 
+			name="employeeName" value="Aman Gupta"/> <constructor-arg name="addr" ref="addr" 
+			/> -->
+
+		<property name="employeeId" value="111" />
+		<property name="employeeName" value="222" />
+		<!-- <property name="addr" ref="addr"/> -->
+	</bean>
+
+	<bean class="com.psl.bean.Address" id="addr" primary="true" lazy-init="true">
+
+		<!-- <constructor-arg name= "city" value="bhopal"/> <constructor-arg name= 
+			"street" value="mp nagar"/> <constructor-arg name= "landmark" value="near 
+			bake"/> -->
+
+		<property name="city" value="pune" />
+		<property name="street" value="FC Road" />
+		<property name="landmark" value="xyz" />
+	</bean>
+
+	<bean class="com.psl.bean.Address" id="addr1" lazy-init="true">
+
+		<!-- <constructor-arg name= "city" value="bhopal"/> <constructor-arg name= 
+			"street" value="mp nagar"/> <constructor-arg name= "landmark" value="near 
+			bake"/> -->
+
+		<property name="city" value="delhi" />
+		<property name="street" value="FC " />
+		<property name="landmark" value="abc" />
+	</bean>
+
+
+
+
+
+</beans>
